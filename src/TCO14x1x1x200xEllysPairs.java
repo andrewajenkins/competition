@@ -1,4 +1,4 @@
-public class EllysPairs{
+public class TCO14x1x1x200xEllysPairs {
 	public int getDifference(int[] a){
 		int[] pairs = new int[a.length/2];
 		int highest = 0, lowest = 0;
@@ -20,7 +20,7 @@ public class EllysPairs{
 	}
 }
 
-
+/**
 Problem Statement
     
 In one of her subjects at the university, Elly and her classmates have to prepare projects. The professor wants the students to work in pairs (groups of two). Each student must belong to exactly one pair and each pair should produce one project. You may assume that the number of people in the class is even.  You are given a int[] knowledge. Each element of knowledge is the amount of knowledge of one of the students. The quality of a project is the total knowledge of the students that work on it. That is, if students i and j form one of the pairs, the quality of their project will be knowledge[i] + knowledge[j].  This creates some problems. If there is a really strong group, their project will be of really high quality. The professor will then compare the other projects to it and will be disappointed by them, giving low grades to the other pairs. Thus, the students want to form the groups in such way that the difference between the quality of the best project and the quality of the worst project is as small as possible.  Return that minimal difference in the quality between the best and the worst project if the students split into pairs in the best possible way.
@@ -76,3 +76,4 @@ Returns: 2
 Returns: 3
 
 This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
+*/

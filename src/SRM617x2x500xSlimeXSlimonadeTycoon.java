@@ -1,4 +1,4 @@
-public class SlimeXSlimonadeTycoon{
+public class SRM617x2x500xSlimeXSlimonadeTycoon {
 	public int sell(int[] m, int[] c, int sl){
 		int[] d = new int[m.length];
 		int sold = 0;
@@ -20,7 +20,7 @@ public class SlimeXSlimonadeTycoon{
 	}
 }
 
-
+/**
 Problem Statement
     
 You are playing a game called Slime Tycoon. You will be selling Slimonades in this game, and your goal is to sell as many as you can.  The game will consist of N game days, numbered 0 through N-1 in order. You are given two int[]s morning and customers with N elements each, and an int stale_limit. These represent constraints on how many Slimonades you can produce and sell, as explained below.  In each game day, three things happen, in the following order:
@@ -95,3 +95,4 @@ Returns: 15
 Returns: 15
 
 This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
+*/

@@ -2,7 +2,7 @@
  * a position x. Todo: traverse the array looking for a unique path
  */
 
-public class ColorfulCoinsEasy{
+public class SRM616x2x600xColorfulCoinsEasy {
 	public String isPossible(int[] v){
 		String p = "Possible", ip = "Impossible";
 		int[] pos = new int[v.length];
