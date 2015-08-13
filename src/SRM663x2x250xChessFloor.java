@@ -1,4 +1,4 @@
-public class ChessFloor {
+public class SRM663x2x250xChessFloor {
 	public int minimumChanges(String[] floor) {
 		int[] a = new int[256];
 		int[] b = new int[256];

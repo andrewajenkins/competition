@@ -1,5 +1,5 @@
 import java.util.*;
-public class ABBA {
+public class SRM663x2x500xABBA {
 	public String canObtain(String initial, String target) {
 		List<String> que = new ArrayList<String>();
 		int i = 0;

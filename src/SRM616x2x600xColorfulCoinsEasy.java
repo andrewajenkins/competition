@@ -4,7 +4,7 @@
 
 public class SRM616x2x600xColorfulCoinsEasy {
 	public String isPossible(int[] v){
-		String p = "Possible", ip = "Impossible";
+		String p = "Possible";
 		int[] pos = new int[v.length];
 		for(int i = 0; i<v.length; i++){
 			int val = v[i];

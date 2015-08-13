@@ -3,7 +3,7 @@ import java.util.*;
  * Fyi add all three/3 is what the solution will be
  * if any of the three aren't 
  */
-public class BearPlaysDiv2 {
+public class SRM664x2x500xBearPlaysDiv2 {
 	public String equalPiles(int A, int B, int C) {
 		if(((A+B+C)%3) > 0) return "impossible";
 		int i = -1;

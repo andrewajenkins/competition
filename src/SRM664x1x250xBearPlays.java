@@ -1,4 +1,4 @@
-public class BearPlays {
+public class SRM664x1x250xBearPlays {
 	public int pileSize(int A, int B, int K) {
 		while(K > 0) {
 			K--;
