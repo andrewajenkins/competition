@@ -1,4 +1,4 @@
-public class LuckyXor {
+public class SRM665x2x1xLuckyXor {
 	public int construct(int a) {
 		int[] b = {4, 7, 44, 47, 74, 77};
 		for(int i = 0; i < b.length; i++) {
