@@ -1,4 +1,6 @@
-﻿import java.util.*;
+﻿package prob;
+
+import java.util.*;
 
 public class SRM610x2x250xDivideByZero{
 	public int CountNumbers(int[] numList){

@@ -1,3 +1,5 @@
+package prob;
+
 public class SRM144x2x2xBinaryCode {
 
 	public String[] decode(String message) {

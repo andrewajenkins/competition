@@ -1,3 +1,5 @@
+package prob;
+
 import java.util.*;
 /**
  * Fyi add all three/3 is what the solution will be

@@ -1,3 +1,5 @@
+package prob;
+
 public class SRM668x2x600xIsItASquare {
 
 	int[] x;

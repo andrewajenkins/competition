@@ -1,3 +1,5 @@
+package prob;
+
 import java.util.*;
 
 public class TCI02x1x2xEscape {

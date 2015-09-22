@@ -1,4 +1,4 @@
-/* Creates an array that contains the number of coins possible for
+package prob;/* Creates an array that contains the number of coins possible for
  * a position x. Todo: traverse the array looking for a unique path
  */
 

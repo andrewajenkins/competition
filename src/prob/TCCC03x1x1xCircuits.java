@@ -1,3 +1,5 @@
+package prob;
+
 import java.util.*;
 public class TCCC03x1x1xCircuits {
 

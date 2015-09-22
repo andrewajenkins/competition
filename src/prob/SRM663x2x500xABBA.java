@@ -1,3 +1,5 @@
+package prob;
+
 import java.util.*;
 public class SRM663x2x500xABBA {
 	public String canObtain(String initial, String target) {

@@ -1,3 +1,5 @@
+package prob;
+
 public class SRM564x2x500xAlternateColors {
 	public String getColor(long r, long g, long b, long k) {
 		int index = -1;

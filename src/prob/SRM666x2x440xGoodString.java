@@ -1,3 +1,5 @@
+package prob;
+
 public class SRM666x2x440xGoodString {
 	public String isGood(String s) {
 		while(s.contains("ab")) {

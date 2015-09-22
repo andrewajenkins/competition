@@ -1,3 +1,5 @@
+package prob;
+
 import java.util.*;
 public class SRM181x1x3xKiloManX {
 

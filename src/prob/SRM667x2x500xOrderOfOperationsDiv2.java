@@ -1,3 +1,4 @@
+package prob;
 
 public class SRM667x2x500xOrderOfOperationsDiv2 {
 	public int minTime(String[] s) {
