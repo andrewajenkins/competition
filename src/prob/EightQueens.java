@@ -18,7 +18,7 @@ public class EightQueens {
         System.out.println("Success!!!");
     }
 
-    public static test(boolean[][] t, int x, int y) {
+    public static boolean test(boolean[][] t, int x, int y) {
        for(int i = 0; i < 8; i++) {
             if(t[x][i] || t[i][y]) return false;
             if(x-i > 0 && y-i > 0 && t[x-i][y-i]) return false;
