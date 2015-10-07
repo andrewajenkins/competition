@@ -1,4 +1,4 @@
-﻿package prob;
+package prob;
 
 public class SRM609x2x250xMagicalString {
     public int minimalMoves(String ms) {
