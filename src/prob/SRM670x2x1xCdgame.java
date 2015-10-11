@@ -1,5 +1,5 @@
 import java.util.*;
-public class Cdgame {
+public class SRM670x2x1xCdgame {
 	public int rescount(int[] a, int[] b) {
 		Set<Integer> s = new HashSet<>();
 		for(int i = 0; i < a.length; i++) {

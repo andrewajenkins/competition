@@ -1,5 +1,5 @@
 import java.util.*;
-public class Drbalance {
+public class SRM670x2x2xDrbalance {
 	public int lesscng(String s, int k) {
 		List<String> list = new ArrayList<>();
 		int count = 0;
