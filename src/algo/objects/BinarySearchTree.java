@@ -23,4 +23,30 @@ public class BinarySearchTree {
             return treeSearch(x.right, k);
         }
     }
+
+    public static TreeNode treeMinimum(TreeNode x) {
+        while(x.left != null) {
+            x = x.left;
+        }
+        return x;
+    }
+
+    public static TreeNode treeMaximum(TreeNode x) {
+        while(x.right != null) {
+            x = x.right;
+        }
+        return x;
+    }
+
+    public static TreeNode treeSuccessor(TreeNode x) {
+        if(x.right != null) {
+            return treeMinimum(x.right);
+        }
+        TreeNode y = x.p;
+        while(y != null && x == y.right) {
+            x = y;
+            y = y.p;
+        }
+        return y;
+    }
 }
