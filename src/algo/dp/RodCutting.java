@@ -43,6 +43,19 @@ public class RodCutting {
         return q;
     }
 
+    public static int bottomUpCutRod(int[] p, int n) {
+        int[] r = new int[n];
+        r[0] = 0;
+        for(int j = 1; j < n; j++) {
+            int q = Integer.MIN_VALUE;
+            for(int i = 1; i < j; i++) {
+                q = Math.max(q, p[i] + r[j - i]);
+            }
+            r[j] = q;
+        }
+        return r[n];
+    }
+
     public static void main(String[] args) {
 
         int[] price = new int[]{1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
