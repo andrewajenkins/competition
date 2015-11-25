@@ -1,3 +1,5 @@
+package prob.CFR602DIV2;
+
 import java.util.Scanner;
 /*
  * http://codeforces.com/contest/602/problem/A

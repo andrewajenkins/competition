@@ -6,7 +6,31 @@ public class BridgeBuildingDiv2 {
 	
 	public int minDiameter(int[] a, int[] b, int K) {
 
-		int l = a.length;
+		int[] change = new int[a.length];
+
+		int[][] brute = new int[change.length][change.length];
+
+		for(int i = 0; i < a.length; i++) {
+			change[i] = a[i] - b[i];
+		}
+
+		for(int i = 0; i < a.length; i++) {
+			for(int j = 0; j < a.length; j++) {
+				int subArraySum = 0;
+				for(int k = i; k <= j; k ++) {
+					subArraySum += change[k];
+				}
+				brute[i][j] = subArraySum;
+			}
+		}
+
+		System.out.println(Arrays.toString(change));
+
+		System.out.println(Arrays.deepToString(brute));
+
+		System.exit(0);
+
+		int l = a.length + 1;
 
 		int n = 2 * l;
 
@@ -18,11 +42,11 @@ public class BridgeBuildingDiv2 {
 		int[][] dist = new int[n+1][n+1];
 
 		for(int[] row : dist) {
-			Arrays.fill(row, 999);
+			Arrays.fill(row, 99);
 		}
 
 		dist[0][0] = dist[l][l] = 0;
-		for(int i = 0; i < l; i++) {
+		for(int i = 0; i < l-1; i++) {
 			dist[i][i+1] = a[i];
 			dist[i+1][i] = a[i];
 			dist[i+l][i+l+1] = b[i];
@@ -50,9 +74,7 @@ public class BridgeBuildingDiv2 {
 		for(String s : sa) {
 			System.out.println(s);
 		}
-		for(int i = 0; i < a.length; i++) {
-			System.out.print(a[i] - b[i] + " ");
-		}
+
 		return 0;
 	}
 }

@@ -9,7 +9,7 @@ public class BearPaints {
 		long small = W < H ? W : H;
 		if(large * small < M) return large * small;
 		for(int i = (int)large; i > 0; i--) {
-			System.out.println(large + " " + small);
+			System.out.println("BearPaints.maxArea" + large + " " + small);
 			if(large <= small) {
 				long temp = large;
 				large = small;
