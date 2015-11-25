@@ -2,9 +2,9 @@ import java.util.*;
 import java.math.*;
 import static java.lang.Math.*;
 
-public class BearPermutations2 {
-	public int getSum(int N, int MOD) {
-
+public class OneEntrance {
+	
+	public int count(int[] a, int[] b, int s) {
 		return 0;
 	}
 }
