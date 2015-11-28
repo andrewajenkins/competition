@@ -1,10 +1,7 @@
-package dp;
+package algo.dp;
 
 import java.util.Arrays;
 
-/**
- * Created by username on 10/16/2015.
- */
 public class RodCutting {
 
     //recursive top down
@@ -56,12 +53,42 @@ public class RodCutting {
         return r[n];
     }
 
+    public static Pair extendedBottomUpCutRod(int[] p, int n) {
+        int[] r = new int[n];
+        int[] s = new int[n];
+        r[0] = 0;
+        for(int j = 1; j <= n; j++) {
+            int q = Integer.MIN_VALUE;
+            for(int i = 1; i <= j; i++) {
+                if(q < p[i] + r[j-1]) {
+                    q = p[i] + r[j-1];
+                    s[j] = i;
+                }
+            }
+            r[j] = q;
+        }
+        return new Pair(r, s);
+    }
+
+    public static void printCutRodSolution(int[] p, int n) {
+        Pair pr = extendedBottomUpCutRod(p, n);
+        while(n > 0) {
+            System.out.print(pr.s[n]);
+            n -= pr.s[n];
+        }
+    }
+
+    static class Pair {
+        int[] r;
+        int[] s;
+        Pair(int[] r, int[] s) {
+            this.r = r;
+            this.s = s;
+        }
+    }
+
     public static void main(String[] args) {
-
         int[] price = new int[]{1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
-
-        int revenue = cutRod(price, 3);
-
-        System.out.println(revenue);
+        printCutRodSolution(price, 3);
     }
 }
