@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@SuppressWarnings({ "rawtypes", "unused" })
+@SuppressWarnings({ "rawtypes", "unused", "unchecked"})
 public class ReflectionExample {
 
 	public static int intPrim;
@@ -19,7 +19,7 @@ public class ReflectionExample {
 
 	ReflectionExample() {
 		intPrim = 42;
-		arrayPrim = new int[666];
+		arrayPrim = new int[10];
 		listObject = new ArrayList<>();
 	}
 
@@ -31,21 +31,22 @@ public class ReflectionExample {
 		listObject.add(String.valueOf(m));
 	}
 
-	public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, SecurityException {
+	public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		ReflectionExample example = new ReflectionExample();
+		example.doSomething(5, 6, 7, 8, 9);
 		Class d = Class.forName("lang.ReflectionExample");
-		Field[] fa = d.getFields();
-		System.out.println(Arrays.toString(fa));
-		for(Field f : fa) {
-			f.setAccessible(true);
-			System.out.println(Modifier.toString(f.getModifiers()));
-		}
+		Field publicField = d.getFields()[0];
 		Field protectedField = d.getDeclaredField("arrayPrim");
 		Field privateField = d.getDeclaredField("listObject");
+		publicField.setAccessible(true);
 		protectedField.setAccessible(true);
 		privateField.setAccessible(true);
+		System.out.println("publ "+Modifier.toString(publicField.getModifiers()));
 		System.out.println("prot "+Modifier.toString(protectedField.getModifiers()));
 		System.out.println("priv "+Modifier.toString(privateField.getModifiers()));
+		System.out.println("publVal "+publicField.get(example));
+		System.out.println("protVal "+Arrays.toString((int[])protectedField.get(example)));
+		System.out.println("privVal "+Arrays.toString(((List<String>)privateField.get(example)).toArray(new String[5])));
 		System.exit(0);
 	}
 
