@@ -6,6 +6,7 @@ public class BearPermutations2 {
 	static int[] sumdp = new int[inf];
 	static int[] fact = new int[inf];
 	
+	//Not my solution
 	public static int getSum(int a, int b) {
 		int mod = b;
 		fact[0] = c[0][0] = 1;
