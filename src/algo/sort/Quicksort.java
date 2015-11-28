@@ -1,9 +1,11 @@
 package algo.sort;
 
 import java.util.Arrays;
+import java.util.Random;
 
 class Quicksort {
 
+	static Random rand = new Random();
 	static int q = -1;//partition
 	
 	public static int[] sort(int[] a) {
@@ -12,7 +14,7 @@ class Quicksort {
 
 	public static int[] quicksort(int[] a, int p, int r) {
 		if(p >= r) return a;
-		a = partition(a, p, r);
+		a = randomizedPartition(a, p, r);
 		a = quicksort(a, p, q - 1);
 		a = quicksort(a, q, r);
 		return a;
@@ -32,16 +34,18 @@ class Quicksort {
 		return a;
 	}
 
+	public static int[] randomizedPartition(int[] a, int p, int r) {
+		int randomInt = rand.nextInt((r - p) + 1) + p;
+		a = swap(a, r, randomInt);
+		a = partition(a, p, r);
+		return a;
+	}
+
 	public static int[] swap(int[] a, int i, int j) {
 		int temp = a[i];
 		a[i] = a[j];
 		a[j] = temp;
 		return a;
-	}
-
-	class ReturnObject {
-		int p;
-		int[] a;
 	}
 
 	public static void main(String[] args) {
