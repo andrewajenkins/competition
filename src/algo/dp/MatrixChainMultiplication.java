@@ -17,7 +17,7 @@ public class MatrixChainMultiplication {
 				m[i][j] = Integer.MAX_VALUE;
 				for(int k = i; k <= j-1; k++) {
 					int q = m[i][k] + m[k+1][j] + (p[i-1]*p[k]*p[j]);
-					printDebug(i, j, k, m, p, q);
+					//printDebug(i, j, k, m, p, q);
 					if(q < m[i][j]) {
 						m[i][j] = q;
 						s[i][j] = k;
@@ -28,10 +28,22 @@ public class MatrixChainMultiplication {
 		return new ResultObject(m, s);
 	}
 
+	public static void printOptimalParens(int[] p, int[][] s, int i, int j) {
+		if(i == j) 
+			System.out.print("A"+i);
+		else {
+			System.out.print("(");
+			printOptimalParens(p, s, i, s[i][j]);
+			printOptimalParens(p, s, s[i][j] + 1, j);
+			System.out.print(")");
+		}
+	}
+
 	public static void printDebug(int i, int j, int k, int[][] m, int[] p, int q) {
 		System.out.println("m["+i+"]["+j+"]=m["+i+"]["+k+"]+m["+k+"+1]["+j+"]+p["+i+"-1]p["+k+"]p["+j+"]");
 		System.out.println(q+" = "+m[i][k]+" + "+m[k+1][j]+" + "+"("+p[i-1]+"*"+p[k]+"*"+p[j]+"="+(p[i-1]*p[k]*p[j])+")");
 	}
+
 	static class ResultObject {
 		int[][] m;
 		int[][] s;
@@ -75,11 +87,14 @@ public class MatrixChainMultiplication {
 	}
 
 	public static void runMatrixChainOrderTest() {
-		//int[] a = {5,5,4,4,6,6,3,3};
 		int[] a = {30,35,15,5,10,20,25,20,15,35,10,5};
 		ResultObject ro = matrixChainOrder(a);
 		print(ro.m);
 		print(ro.s);
+		System.out.println("\nFor arrays of size:");
+		for(int k = 0; k < a.length/2; k++) System.out.println("A"+(k+1)+" = "+a[k*2]+"x"+a[k*2+1]);
+		System.out.println("The optimal parenthesization is");
+		printOptimalParens(a, ro.s, 1, ro.s.length - 2);
 	}
 
 	public static void runRectangleMatrixTest() {
