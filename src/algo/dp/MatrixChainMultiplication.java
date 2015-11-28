@@ -3,26 +3,21 @@ package algo.dp;
 import java.util.Arrays;
 
 public class MatrixChainMultiplication {
-	public static void main(String[] args) {
-		
-//		runSquareMatrixTest();
-//		runRectangleMatrixTest();
-	
-	}
 
-	public ResultObject matrixChainOrder(int[] p) {
-		int n = p.length - 1;
+	public static ResultObject matrixChainOrder(int[] p) {
+		int n = p.length/2 + 2;
 		int[][] m = new int[n][n];
 		int[][] s = new int[n][n];
 		for(int i = 0; i < n; i++) {
 			m[i][i] = 0;
 		}
-		for(int l = 2; l < n; l++) { //l is the chain length
-			for(int i = 1; i < n-l-1; i++) {
+		for(int l = 2; l <= n; l++) { //l is the chain length
+			for(int i = 1; i <= n-l-1; i++) {
 				int j = i + l - 1;
 				m[i][j] = Integer.MAX_VALUE;
-				for(int k = i; k < j -1; k++) {
+				for(int k = i; k <= j-1; k++) {
 					int q = m[i][k] + m[k+1][j] + (p[i-1]*p[k]*p[j]);
+					printDebug(i, j, k, m, p, q);
 					if(q < m[i][j]) {
 						m[i][j] = q;
 						s[i][j] = k;
@@ -33,7 +28,11 @@ public class MatrixChainMultiplication {
 		return new ResultObject(m, s);
 	}
 
-	class ResultObject {
+	public static void printDebug(int i, int j, int k, int[][] m, int[] p, int q) {
+		System.out.println("m["+i+"]["+j+"]=m["+i+"]["+k+"]+m["+k+"+1]["+j+"]+p["+i+"-1]p["+k+"]p["+j+"]");
+		System.out.println(q+" = "+m[i][k]+" + "+m[k+1][j]+" + "+"("+p[i-1]+"*"+p[k]+"*"+p[j]+"="+(p[i-1]*p[k]*p[j])+")");
+	}
+	static class ResultObject {
 		int[][] m;
 		int[][] s;
 		ResultObject (int[][] m, int[][] s) {
@@ -42,7 +41,7 @@ public class MatrixChainMultiplication {
 		}
 	}
 
-	//generecized algorithm for matrix multiplication
+	//genericized algorithm for matrix multiplication
 	private static int[][] matrixMultiply(int[][] a, int[][] b) {
 		if(a[0].length != b.length) {
 			throw new RuntimeException("incompatible dimensions");
@@ -75,6 +74,14 @@ public class MatrixChainMultiplication {
 		return c;
 	}
 
+	public static void runMatrixChainOrderTest() {
+		//int[] a = {5,5,4,4,6,6,3,3};
+		int[] a = {30,35,15,5,10,20,25,20,15,35,10,5};
+		ResultObject ro = matrixChainOrder(a);
+		print(ro.m);
+		print(ro.s);
+	}
+
 	public static void runRectangleMatrixTest() {
 		int[][] c = {{1,2},{3,4},{5,6}};
 		int[][] d = {{1,2,3},{4,5,6}};
@@ -87,5 +94,18 @@ public class MatrixChainMultiplication {
 		int[][] b = {{5, 6},{7, 8}};
 		int[][] r = squareMatrixMultiply(a, b);
 		System.out.println(Arrays.deepToString(r));
+	}
+
+	public static void main(String[] args) {
+		runMatrixChainOrderTest();
+//		runSquareMatrixTest();
+//		runRectangleMatrixTest();
+	
+	}
+
+	public static void print(int[][] ia) {
+		for(int[] a : ia) {
+			System.out.println(Arrays.toString(a));
+		}
 	}
 }
