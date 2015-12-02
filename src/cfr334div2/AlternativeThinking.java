@@ -1,76 +1,60 @@
-package cfr334div2;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class AlternativeThinking {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		Integer.parseInt(sc.nextLine());
-		char[] cr = sc.nextLine().toCharArray();
-		boolean[] r = new boolean[cr.length];
-		for(int i = 0; i < r.length; i++) {
-			r[i] = cr[i] == '1';
+
+	public static void main(String[] args) throws FileNotFoundException {
+		Scanner sc = new Scanner(new File(args[0]));
+		while(sc.hasNextLine()) {
+			int a = Integer.parseInt(sc.nextLine().split(" ")[0]);
+			char[] cr = sc.nextLine().toCharArray();
+			boolean[] r = new boolean[cr.length];
+			for(int i = 0; i < r.length; i++) {
+				r[i] = cr[i] == '1';
+			}
+			int t = flip(r, 0, true, 0, 0);
+			int f = flip(r, 0, false, 0, 0);
+			System.out.println("Answer: "+Math.max(t, f)+" for input "+new String(cr));
 		}
-		System.out.println(Math.max(flip(r, 0, true, 0, 0), flip(r, 0, false, 0, 0)));
 		sc.close();
 	}
 
 	public static int flip(boolean[] r, int i, boolean p, int f, int c) {
 		if(i >= r.length) {
-			System.out.println("returning " + c);
 			return c;
 		}
-		//before flip state
-			//if match inc counter cont
-			//if not match 1. skip, 2. enter flip state
-		//if in flip state
-			//if match 1. skip, 2. terminate flip state
-			//if not match 1. skip
-		//after flip state
-			//if match inc and cont
-			//if not match cont;
-		if(f == 0) {	
+		if(f == 0) {
 			if(r[i] == p) {
-				System.out.println("match index "+i+" is "+p);
-				c++;//increment length counter
-				i++;//increment result index
-				return flip(r, i, p, f, c);
+				return flip(r, i+1, f(p), f, c+1);
 			} else {
-				System.out.println("no match index "+i+" is "+p);
-				int iggy = flip(r, i+1, p, f, c); //skip, try ignoring this char
-				f = f+1; //start flip state
-				int flippy = flip(r, i+1, p, f, c);//try flip sequence
-				return Math.max(iggy, flippy); //return greater of the two trys
+				int iggy = flip(r, i+1, p, f, c);
+				int flippy = flip(r, i, f(p), f+1, c);
+				return Math.max(iggy, flippy);
 			}
 		} else if(f == 1) {
 			if(r[i] == p) {
-				int iggy = flip(r, i+1, p, f, c); //skip, try ignoring this match
-				f = f + 1; // terminate flip sequence
-				c++; //count the match
-				i++; //move on
-				int term = flip(r, i+1, p, f, c);//try terminating flip
-				return Math.max(iggy, term);
+				return flip(r, i+1, f(p), f, c+1);
 			} else {
-				return flip(r, i+1, p, f, c); //try continue in flip state
+				int iggy = flip(r, i+1, p, f, c);
+				int term = flip(r, i+1, p, f+1, c+1);
+				return Math.max(iggy, term);
 			}
-		} else if(f == 2) {
+		} else {
 			if(r[i] == p) {
-				c++; //count it
-				i++; //move on
-				return flip(r, i, f(p), f, c);
+				return flip(r, i+1, f(p), f, c+1);
 			} else {
 				return flip(r, i+1, p, f, c);
 			}
-		} else {
-			throw new RuntimeException("can't identify f");
 		}
 	}
-	
+
 	public static boolean f(boolean p) {
 		return p ? false : true;
 	}
 }
 /*
- * C. Alternative Thinking
+C. Alternative Thinking
 time limit per test2 seconds
 memory limit per test256 megabytes
 inputstandard input
@@ -104,4 +88,4 @@ Note
 In the first sample, Kevin can flip the bolded substring '10000011' and turn his string into '10011011', which has an alternating subsequence of length 5: '10011011'.
 
 In the second sample, Kevin can flip the entire string and still have the same score.
- */
+*/
