@@ -10,7 +10,25 @@ import java.io.*;
  */
 public class FanDuelKnapsack {
 
-	static Map<Integer,Player> data = new HashMap<>();
+	static List<Player> data = new ArrayList<>();
+
+    static Map<Position, List<Player>> posMap = new HashMap<>();
+
+    static void getCombinations() {
+        populatePosMap();
+    }
+
+    static void populatePosMap() {
+        for(Position p : Position.values()) {
+            posMap.put(p, new LinkedList<Player>());
+        }
+        for(Player p : data) {
+            List<Player> l = posMap.get(p.position);
+            l.add(p);
+            posMap.put(p.position, l);
+        }
+        System.out.println(posMap.keySet());
+    }
 
 	static void loadData(String fileName) {
 		String csvFile = "FanDuel-NFL-2015-12-13-13913-players-list.csv";
@@ -27,7 +45,7 @@ public class FanDuelKnapsack {
 					line[i] = s.replaceAll("\"", "");
 				}
 				Player p = new Player(line);
-				data.put(p.id, p);
+				data.add(p);
 			}
 		} catch(FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
@@ -37,8 +55,8 @@ public class FanDuelKnapsack {
 
 	public static void main(String[] args) {
 		loadData(args[0]);
-		for(int id : data.keySet()) {
-			System.out.println(data.get(id));
-		}
+	    Debug.print(data);
+        getCombinations();
+        Debug.print(posMap);
 	}
 }

@@ -1,11 +1,12 @@
 class Player {
     int id, played, salary;
-    String position, firstName, lastName, game, team,
+    String firstName, lastName, game, team,
            opponent, injury, deets;
     Double rating;
+    Position position;
     Player(String[] sa) {
         id = Integer.parseInt(sa[0]);
-        position = sa[1];
+        position = Position.valueOf(sa[1].toUpperCase());
         firstName = sa[2];
         lastName = sa[3];
         rating = Double.parseDouble(sa[4]);
