@@ -17,7 +17,7 @@ public class Team {
     }
 
     public void set(Player[] team) {
-        this.team = team;
+        this.team = Arrays.copyOf(team, team.length);
     }
 
     public void set(int i, Player p) {
@@ -26,7 +26,8 @@ public class Team {
 
     public boolean hasPlayer(Player p) {
         for(int i = 0; i < team.length; i++) {
-            if(team != null && team[i] != null && p.equals(team[i])) {
+            //System.out.println((p == null)+" "+(team == null));
+            if(p.equals(team[i])) {
                 return true;
             }
         }

@@ -17,25 +17,27 @@ public class FanDuelKnapsack {
     static List<Team> teams = new ArrayList<>();
 
     static void getCombinations() {
-       run(new Team(), 0);  
+       run(new Team(), 0, 0, null);  
     }
 
     //params Team team, int ndex
-    static void run(Team team, int index) {
-        //if length = x, teams.add(t), return
+    static void run(Team team, int index, int posIndex, Position lastPos) {
         if(index >= Team.positions.length) {
             System.out.println("returning "+team);
             teams.add(new Team(team.team));
             return;
         }
-        System.out.println(index+" "+Team.positions[index]+" "+team);
-        //for each player with position of teamPos[i]
-        for(Player p : posMap.get(Team.positions[index])) {
+        //System.out.println(index+" "+Team.positions[index]+" "+team);
+        List<Player> list = posMap.get(Team.positions[index]);
+        if(!Team.positions[index].equals(lastPos)) {
+            posIndex = 0;
+        }
+        for(int i = posIndex; i < list.size(); i++) {
             //sleep(500);
-            //if !hasPlayer(p), add to team and continue
+            Player p = list.get(i);
             if(!team.hasPlayer(p)) {
                 team.set(index, p);
-                run(team, index + 1);
+                run(team, index + 1, i + 1, Team.positions[index]);
             }
         }
     }
@@ -80,11 +82,14 @@ public class FanDuelKnapsack {
 	}
 
 	public static void main(String[] args) {
+        long start = System.currentTimeMillis();
 		loadData(args[0]); // loads list from csv file param
-	    Debug.print(data);
+	    //Debug.print(data);
         populatePosMap(); // create map that returns list of players per position
-        Debug.print(posMap);
+        //Debug.print(posMap);
         getCombinations(); // returns list of teams ordered by total ranking
+        long finish = System.currentTimeMillis() - start;
         Debug.print(teams);
+        System.out.println("Time: "+finish);
 	}
 }

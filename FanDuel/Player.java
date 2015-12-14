@@ -31,12 +31,8 @@ class Player {
 
     @Override
     public boolean equals(Object o) {
-        //TODO check type
         Player p = (Player) o;
-        if(p == null) {
-            //System.out.println(this.id);
-        }
-        return this.id == p.id;
+        return p != null && this.id == p.id;
     }
 
     @Override
