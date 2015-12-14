@@ -1,10 +1,16 @@
 class Player {
+
     int id, played, salary;
+
     String firstName, lastName, game, team,
            opponent, injury, deets;
+
     Double rating;
+
     Position position;
+
     Player(String[] sa) {
+        try {
         id = Integer.parseInt(sa[0]);
         position = Position.valueOf(sa[1].toUpperCase());
         firstName = sa[2];
@@ -17,9 +23,24 @@ class Player {
         opponent = sa[9];
         injury = sa[10];
         deets = sa[11];
+        } catch(Exception e) {
+            System.out.println(firstName +" "+lastName);
+            e.printStackTrace();
+        }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        //TODO check type
+        Player p = (Player) o;
+        if(p == null) {
+            //System.out.println(this.id);
+        }
+        return this.id == p.id;
+    }
+
     @Override
     public String toString() {
-        return firstName + ", " + lastName;
+        return "\""+firstName + ", " + lastName+"\"";
     }
 }
