@@ -1,15 +1,16 @@
-
-#### [Competition](./archive) - archived problems from topcoder and codeforces  
------
-##### [Floyd-Warshall DP solution](./archive/TopCoder/SRM661DIV2/src/BridgeBuildingDiv2.java)   
-##### [ACM-ICPC-Regional](./archive/CodeForces/ACM-ICPC-Regional) - Fun 5 hour competition with robots and geometry  
+##### [Fantasy Football Analyzer](./FanDuel) - team picker for fanduel and related sites (in progress)
 =====
-#### [Algorithms](./src/algo) - compilation of algorithms and data structures  
+##### [Competition](./archive) - archived problems from topcoder and codeforces  
 -----
-##### [Longest Common Subsequence](./src/algo/dp/LongestCommonSubsequence.java)  
-##### [Matrix Chain Multiplication](./src/algo/dp/MatrixChainMultiplication.java)  
+###### [Floyd-Warshall DP solution](./archive/TopCoder/SRM661DIV2/src/BridgeBuildingDiv2.java)   
+###### [ACM-ICPC-Regional](./archive/CodeForces/ACM-ICPC-Regional) - Fun 5 hour competition with robots and geometry  
 =====
-#### tree .
+##### [Algorithms](./src/algo) - compilation of algorithms and data structures  
+-----
+###### [Longest Common Subsequence](./src/algo/dp/LongestCommonSubsequence.java)  
+###### [Matrix Chain Multiplication](./src/algo/dp/MatrixChainMultiplication.java)  
+=====
+##### tree .
 -----
 ├── archive  
 │   ├── CodeForces  
