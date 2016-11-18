@@ -1,17 +1,15 @@
-##### [Fantasy Football Analyzer](./FanDuel) - team picker for fanduel and related sites (in progress)
-=====
-##### [Competition](./archive) - archived problems from topcoder and codeforces  
+﻿#### This repository contains competition results from TopCoder and CodeForces algorithm competitions and examples for common algorithms and data structures. There are over 60 problems solved, most of which don't have any discernable documentation. Please let me know if you are interested in a particular problem and I'll be glad to throw together documentation for it.
 -----
-###### [Floyd-Warshall DP solution](./archive/TopCoder/SRM661DIV2/src/BridgeBuildingDiv2.java)   
-###### [ACM-ICPC-Regional](./archive/CodeForces/ACM-ICPC-Regional) - Fun 5 hour competition with robots and geometry  
-=====
-##### [Algorithms](./src/algo) - compilation of algorithms and data structures  
+#### Sections
+##### [Solutions](./archive) - archived algorithms from topcoder and codeforces  
+##### [Examples](./src/algo) - compilation of algorithms and data structures translated from pseudo-code into Java  
 -----
-###### [Longest Common Subsequence](./src/algo/dp/LongestCommonSubsequence.java)  
-###### [Matrix Chain Multiplication](./src/algo/dp/MatrixChainMultiplication.java)  
-=====
-##### tree .
+#### Points of interest
+###### [Floyd-Warshall algorithm solution](./archive/TopCoder/SRM661DIV2/src/BridgeBuildingDiv2.java) - Dynamic programming algorithm used for finding shortest paths in a weighted graph with positive or negative edges (but with no negative cycles). It does this by incrementally improving an estimate on the shortest path between two vertices, until the estimate is optimal. 
+###### [ACM-ICPC-Regional](./archive/CodeForces/ACM-ICPC-Regional) - The ACM-ICPC-Regional's competition lasts 5 hours and allows the user to select which problems to solve from a list. The problems shown here include time simulation, robot traversal of a 2-d table, string recognition and parsing, and rules based scheduling and maximization.
 -----
+##### Here is a recursive directory listing of the project that was generated using the unix tree command.
+
 ├── archive  
 │   ├── CodeForces  
 │   │   ├── ACM-ICPC-Regional  
