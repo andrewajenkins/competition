@@ -1,4 +1,4 @@
-package objects;
+package algo.objects;
 
 import java.util.Arrays;
 

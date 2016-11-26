@@ -1,6 +1,6 @@
-package search;
+package algo.search;
 
-import objects.Vertex;
+import algo.objects.Vertex;
 
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package objects;
+package algo.objects;
 
 public class Tree {
 
