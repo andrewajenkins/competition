@@ -1,12 +1,8 @@
-﻿#### This repository contains competition results from TopCoder and CodeForces algorithm competitions and examples for common algorithms and data structures. There are over 60 problems solved, most of which don't have any discernable documentation. Please let me know if you are interested in a particular problem and I'll be glad to throw together documentation for it.
+﻿#### This repository has 60+ practice and competition results from TopCoder and CodeForces algorithm competitions.  
 -----
-#### Sections
-##### [Solutions](./archive) - archived algorithms from topcoder and codeforces  
-##### [Examples](./src/algo) - compilation of algorithms and data structures translated from pseudo-code into Java  
------
-#### Points of interest
-###### [Floyd-Warshall algorithm solution](./archive/TopCoder/SRM661DIV2/src/BridgeBuildingDiv2.java) - Dynamic programming algorithm used for finding shortest paths in a weighted graph with positive or negative edges (but with no negative cycles). It does this by incrementally improving an estimate on the shortest path between two vertices, until the estimate is optimal. 
-###### [ACM-ICPC-Regional](./archive/CodeForces/ACM-ICPC-Regional) - The ACM-ICPC-Regional's competition lasts 5 hours and allows the user to select which problems to solve from a list. The problems shown here include time simulation, robot traversal of a 2-d table, string recognition and parsing, and rules based scheduling and maximization.
+###### [Solutions](./archive) - archived problems from topcoder and codeforces  
+###### [Floyd-Warshall algorithm solution](./archive/TopCoder/SRM661DIV2/src/BridgeBuildingDiv2.java) - The most interesting problem that I've ever solved was using the Floyd-Warshall algorithm which is a dynamic programming algorithm used for finding shortest paths in a weighted graph with positive or negative edges (but with no negative cycles). It does this by incrementally improving an estimate on the shortest path between two vertices, until the estimate is optimal. 
+###### [ACM-ICPC-Regional](./archive/CodeForces/ACM-ICPC-Regional) - The ACM-ICPC-Regional's competition was a lot of fun. It lasts 5 hours and allows the user to select which problems to solve from a list. The problems shown here include time simulation, robot traversal of a 2-d table, string recognition and parsing, and rules based scheduling and maximization.
 -----
 ##### Here is a recursive directory listing of the project that was generated using the unix tree command.
 
@@ -88,35 +84,3 @@
 │                          ├── BearPermutations2.java  
 │                          ├── BearSlowlySorts.java  
 │                          └── BearSong.java  
-├── src  
-    ├── algo  
-    │   ├── dp  
-    │   │   ├── LongestCommonSubsequence.java  
-    │   │   ├── MatrixChainMultiplication.java  
-    │   │   ├── MaximumSubarray.java  
-    │   │   ├── RodCutting.java  
-    │   │   └── Steps.java  
-    │   ├── objects  
-    │   │   ├── BinarySearchTree.java  
-    │   │   ├── BinaryTree.java  
-    │   │   ├── HashTable.java  
-    │   │   ├── Heap.java  
-    │   │   ├── LinkedList.java  
-    │   │   ├── Node.java  
-    │   │   ├── Queue.java  
-    │   │   ├── Stack.java  
-    │   │   ├── StorageManager.java  
-    │   │   ├── Tree.java  
-    │   │   ├── TreeNode.java  
-    │   │   └── Vertex.java  
-    │   ├── search  
-    │   │   ├── BFS.java  
-    │   │   └── DFS.java  
-    │   └── sort  
-    │       ├── BubbleSort.java  
-    │       ├── Quicksort.java  
-    │       └── TopologicalSort.java  
-    ├── cfr334div2  
-    │   ├── AlternativeThinking.java  
-    ├── lang  
-        └── ReflectionExample.java  
