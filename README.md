@@ -1,7 +1,7 @@
-﻿#### This repository has 60+ practice and competition results from TopCoder and CodeForces algorithm competitions.  
+﻿#### This repository has practice and competition results from TopCoder and CodeForces algorithm competitions.  
 -----
 ###### [Solutions](./archive) - archived problems from topcoder and codeforces  
-###### [Floyd-Warshall algorithm solution](./archive/TopCoder/SRM661DIV2/src/BridgeBuildingDiv2.java) - The most interesting problem that I've ever solved was using the Floyd-Warshall algorithm which is a dynamic programming algorithm used for finding shortest paths in a weighted graph with positive or negative edges (but with no negative cycles). It does this by incrementally improving an estimate on the shortest path between two vertices, until the estimate is optimal. 
+###### [Floyd-Warshall algorithm solution](./archive/TopCoder/SRM661DIV2/src/BridgeBuildingDiv2.java) - An interesting problem using the Floyd-Warshall algorithm which is a dynamic programming algorithm used for finding shortest paths in a weighted graph with positive or negative edges (but with no negative cycles). It does this by incrementally improving an estimate on the shortest path between two vertices, until the estimate is optimal. 
 ###### [ACM-ICPC-Regional](./archive/CodeForces/ACM-ICPC-Regional) - The ACM-ICPC-Regional's competition was a lot of fun. It lasts 5 hours and allows the user to select which problems to solve from a list. The problems shown here include time simulation, robot traversal of a 2-d table, string recognition and parsing, and rules based scheduling and maximization.
 -----
 ##### Here is a recursive directory listing of the project that was generated using the unix tree command.
